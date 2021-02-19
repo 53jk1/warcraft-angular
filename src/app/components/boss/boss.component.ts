@@ -32,7 +32,7 @@ export class BossComponent implements OnInit {
   }
 
   sayHello() {
-    this.messageForUser = 'Dzisiejszy boss to:' + this.rootObject.nameBoss;
+    this.messageForUser = 'Dzisiejszy boss to: ' + this.rootObject.nameBoss;
   }
 
   sayGuild() {
