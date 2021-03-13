@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HeroService, RootObject, RootObjecto} from '../services/hero.service';
+import { HeroService, RootObject} from '../services/hero.service';
 
 @Component({
   selector: 'app-boss',
@@ -10,8 +10,6 @@ export class BossComponent implements OnInit {
 
   messageForUser: string;
   rootObject: RootObject;
-  rootObjecto: RootObjecto;
-  messageForGuild: string;
 
   constructor(private heroService: HeroService){
 
@@ -25,18 +23,10 @@ export class BossComponent implements OnInit {
     this.heroService.getBoss().subscribe(value => {
       this.rootObject = value;
     });
-
-    this.heroService.getGuild().subscribe(value => {
-      this.rootObjecto = value;
-    });
   }
 
   sayHello() {
     this.messageForUser = 'Dzisiejszy boss to: ' + this.rootObject.nameBoss;
-  }
-
-  sayGuild() {
-    this.messageForGuild = 'Dzisiejsza gildia to:' + this.rootObjecto.name + ', ma ' + this.rootObjecto.members + ' czlonkow i ' + this.rootObjecto.achievements + ' osiagniec.';
   }
 
   check(value:string) {
